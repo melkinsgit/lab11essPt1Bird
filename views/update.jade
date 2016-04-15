@@ -1,0 +1,26 @@
+// update jade
+doctype html
+html
+
+	head
+		title=title
+		link(rel='stylesheet', href='/stylesheets/style.css')
+	body
+		h1 Updating Bird #{bird.name}
+		h2 Edit the data below and click the Update Button
+			form(action="/submitUpdate", method="POST")
+				p Name:
+					input(name="name" value="#{bird.name}")
+				p Description:
+					input(name="description" value="#{bird.description}")
+				p Average Eggs Laid: 
+
+				label Average Eggs
+					input(name="averageEggsLaid" type="number" value="#{bird.averageEggsLaid}" min="0")
+				br
+				label Threatened?
+					input(name="threatened" type="checkbox")
+				br
+				input(name="updateButton" type="submit" value="Submit Update")
+				label 
+					input(name="name" value="#{bird._id}" hidden)
